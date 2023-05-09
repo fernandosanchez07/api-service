@@ -1,0 +1,18 @@
+pluginManagement {
+    repositories {
+
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'api-service'
+
+include ':controller'
+include ':model'
+include ':business'
+include ':postgres'
+project(':controller').projectDir = file('./adapters/in/controller')
+project(':postgres').projectDir = file('./adapters/out/postgres')
+project(':business').projectDir = file('./application/business')
+project(':model').projectDir = file('./domain/model')
+
